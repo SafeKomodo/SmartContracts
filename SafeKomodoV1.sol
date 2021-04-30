@@ -2,6 +2,14 @@ pragma solidity >=0.6.8;
 
 //SPDX-License-Identifier: Unlicensed
 
+/*
+   #KOMODO features:
+   4% fee auto add to the liquidity pool
+   1% fee auto add to charity wallet for reserving Komodo Dragon and any wildlife animals
+   4% fee auto distribute to all holders
+   20% Supply is burned at start.
+ */
+
 abstract contract Context {
     function _msgSender() internal view virtual returns (address payable) {
         return payable(msg.sender);
@@ -1103,14 +1111,6 @@ library EnumerableSet {
         return uint256(_at(set._inner, index));
     }
 }
-
-/*
-   #KOMODO features:
-   4% fee auto add to the liquidity pool
-   1% fee auto add to charity wallet for reserving Hornbil Bird any wildlife animals
-   4% fee auto distribute to all holders
-   20% Supply is burned at start.
- */
 
 contract SafeKomodo is Context, IBEP20, Charityable {
     using SafeMath for uint256;
